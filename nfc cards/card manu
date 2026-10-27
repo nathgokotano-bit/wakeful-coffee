@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MANU Coffee</title>
+
+<!-- Keep this page out of Google and other search engines -->
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" type="image/jpeg" href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCABAAEADASIAAhEBAxEB/8QAGwABAAEFAQAAAAAAAAAAAAAAAAYCAwQFBwj/xAAmEAABBAICAgEFAQEAAAAAAAABAAIDBAURBhIHIVETFDFBYSJC/8QAFwEBAQEBAAAAAAAAAAAAAAAAAAIDAf/EAB8RAQABBAIDAQAAAAAAAAAAAAABAgMRIRITMUFR8P/aAAwDAQACEQMRAD8A9loiICIiAiIgIiICIiAi57R8w8Ou8bwmcgltGPNZduHrV+jfrNsl5YQ9vbQDddidn0Qf2ApRkuUYfH8sxPF7NjrkstFPLUjH/TYQ0v38enevnR+Fc26o1MfoTFUT7bpFAuR+WOK4HO5zB3vvfv8ADVYLcsTImkzRSua3ce3f66l7ewOtAg+1s+V87w3G7uQqX4rr5KGFmzUphjDgYIndXAbcNv2fQ/H9Trr1o50/UqRW6s7LNaKxGCGSsD27/OiNq4oUIiIORYnwHxbG2MbahyGSdYoS1poy4s6GWKZsjpemtB8jWRxucPy1g/eyt9yfxjVz3Pq/M5s/la9+m+qacUP0xDE2FznFpBbtwf8AUeD7Hp38Cn6LWb9yZzMo66cYw5tznw/gOXX8teyFy5HZv2KdiKSINDqzq7SzTTr217SQ4HYPr4Cz/I3jivzC+LgzmRxTpsfLi7wqtjcLVORwc+M92nodj09uiNlTpFyL1cY34OFPxRXiZBBHBENMjaGtHwANBVoizWIiICIiAiIgIiIP/9k=">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --page:#FFFFFF;        /* outer background (sampled from your Framer design) */
+  --card:#735847;        /* parent card */
+  --btn:#FFFFFF;         /* link buttons */
+  --btn-hover:#F1EBE6;
+  --logo-bg:#FFFFFF;     /* circle behind the logo */
+  --ink:#000;            /* title + description on the card. For better contrast try #fff */
+  --btn-ink:#000;        /* button labels + icons */
+  --gap:16px;            /* space between card and screen edge */
+  --align:flex-start;    /* flex-start = content at top (as designed) · center = vertically centered */
+}
+*{box-sizing:border-box;margin:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  min-height:100vh;min-height:100dvh;           /* follows the real visible viewport on any phone */
+  display:flex;justify-content:center;
+  padding:max(var(--gap),env(safe-area-inset-top)) max(var(--gap),env(safe-area-inset-right)) max(var(--gap),env(safe-area-inset-bottom)) max(var(--gap),env(safe-area-inset-left));
+  background:var(--page);color:var(--ink);
+  font-family:"DM Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+/* Parent: stretches to the full viewport height. Children sit inside it. */
+.card{
+  flex:1;max-width:520px;
+  display:flex;flex-direction:column;align-items:center;justify-content:var(--align);
+  padding:clamp(28px,5dvh,52px) 20px 28px;
+  background:var(--card);border-radius:28px;
+}
+.logo{
+  width:clamp(76px,22vw,92px);aspect-ratio:1;flex:none;
+  border-radius:50%;overflow:hidden;background:var(--logo-bg);
+}
+.logo img{display:block;width:100%;height:100%;object-fit:cover}
+h1{font-size:clamp(16px,4.6vw,18px);font-weight:700;line-height:1.1;margin:14px 0 8px;text-align:center}
+.about{font-size:clamp(13px,3.9vw,15.5px);line-height:1.25;text-align:center;font-weight:400}
+.about span{display:block;max-width:21em;margin:0 auto}
+.links{width:100%;display:grid;gap:12px;margin-top:clamp(16px,3dvh,24px)}
+.link{
+  display:grid;grid-template-columns:28px 1fr 28px;align-items:center;
+  min-height:54px;padding:0 14px;border-radius:14px;
+  background:var(--btn);color:var(--btn-ink);text-decoration:none;
+  font-size:16px;font-weight:700;text-align:center;
+  -webkit-tap-highlight-color:transparent;transition:background .15s,transform .15s;
+}
+.link span{grid-column:2;grid-row:1}
+.link:hover{background:var(--btn-hover)}
+.link:active{transform:scale(.98)}
+.link:focus-visible{outline:3px solid #fff;outline-offset:2px}
+.link svg{grid-column:1;grid-row:1;width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+@media (prefers-reduced-motion:reduce){.link{transition:none}}
+</style>
+</head>
+<body>
+<main class="card">
+  <div class="logo"><img alt="MANU Coffee logo" width="320" height="320" src="data:image/jpeg;base64,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"></div>
+  <h1>MANU Coffee</h1>
+  <p class="about">
+    <span>Coffee • Matcha • Hojicha • Eats Good Coffee, Good People</span>
+    <span>7 AM - 10 PM</span>
+  </p>
+
+  <nav class="links" aria-label="MANU Coffee social media">
+    <!-- Google Review button (add your review link, then remove the comment markers)
+    <a class="link" href="PASTE-GOOGLE-REVIEW-LINK" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 12.2H12M20.3 12.2A8.5 8.5 0 1 1 17.8 6"/></svg>
+      <span>Google Review</span>
+    </a>
+    -->
+    <a class="link" href="https://web.facebook.com/manucoffeeph/?_rdc=1&amp;_rdr#" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21.5v-8.2h2.8l.5-3.3h-3.3V7.9c0-1 .5-1.7 1.8-1.7h1.6V3.3c-.4-.1-1.4-.2-2.4-.2-2.5 0-4 1.5-4 4.2V10H7.7v3.3h2.8v8.2z"/></svg>
+      <span>Facebook</span>
+    </a>
+    <a class="link" href="https://www.instagram.com/manucoffeeph/" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".7"/></svg>
+      <span>Instagram</span>
+    </a>
+    <a class="link" href="https://www.tiktok.com/@munacafedavao" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 3.5v11a3.8 3.8 0 1 1-3.8-3.8"/><path d="M14.5 3.5c.3 2.5 2 4.2 4.5 4.4"/></svg>
+      <span>TikTok</span>
+    </a>
+  </nav>
+</main>
+</body>
+</html>

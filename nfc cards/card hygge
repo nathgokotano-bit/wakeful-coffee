@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hygge Coffee</title>
+
+<!-- Keep this page out of Google and other search engines -->
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+
+<meta name="theme-color" content="#5D5B55">
+<link rel="icon" type="image/jpeg" href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCABAAEADASIAAhEBAxEB/8QAHAABAQACAgMAAAAAAAAAAAAAAAcBAgMFBAYI/8QALxAAAAYBAgUBBgcAAAAAAAAAAAECAwQFEQYSBxMhMUEUIiMkMlFhFTNCYoGCof/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwD5UAAAAAAAAAAAAAAAAAWXhzoGl1Nwou71yruZdrWyUsGivdJaloVgzcJo09TSSs7d3XHgRoWDQmrKmn4RW9G5qWRWz7GYT7zUSK4p1TKUkXLS50SSlGn64weDMupANdf6Fq9OcMK26OkuYFhPlenZ/EJBJUptKTVzFMknKDVj5TV5yJCLLxB1dR3fBzT9FF1DLsLSslLf2zI7hOG0vcSUGvqncklEXfGC6H2EaAAAAAUbgBChWHE2DHtosSVXKYkG+iU2hbZETSjSZ7+hHv2YP64LyJyMgLhanW0mmuGtjBoYNip6ZKRYMSoLHNklzUkhDhFnBmnftP7Z8DsplLp2DxG1Fp5EareOvrJL9Gp9pkkzZbntoJSiLavaSjQhKj25R2z0EJ+C5MTPN37vf474yfy+O2O/nPgcyzqykydqXzZ5OGSzj3vTqf7e4CyVenaxq8hN6gcqJVu/puRLro7kREUlTTM+U1IRnapwvbwSiIjwgjyPL0jp1lOrdPIvWaicUmklyH2l1rLK2VYVyidSZ7eYSyIkngjxtI8kYhrJ12+uJ1L+3Pxhkfct/wCn+uP5GvwPpZn5nqOYnkfTZ1zn7/L/AKA7ziNGVGvWsxURkORWlIRyGmHDLGDU422e1KjUSunksH5HqoyMAAAAAAAAAAAAAAD/2Q==">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --page:#5D5B55;        /* outer background (sampled from your Framer design) */
+  --card:#85847E;        /* parent card */
+  --btn:#5E5D59;         /* link buttons */
+  --btn-hover:#6A6965;
+  --logo-bg:#000;        /* circle behind the logo */
+  --ink:#000;            /* text on the card */
+  --btn-ink:#000;        /* button labels + icons as designed. For better contrast try #fff */
+  --gap:16px;            /* space between card and screen edge */
+  --align:flex-start;    /* flex-start = content at top (as designed) · center = vertically centered */
+}
+*{box-sizing:border-box;margin:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  min-height:100vh;min-height:100dvh;           /* follows the real visible viewport on any phone */
+  display:flex;justify-content:center;
+  padding:max(var(--gap),env(safe-area-inset-top)) max(var(--gap),env(safe-area-inset-right)) max(var(--gap),env(safe-area-inset-bottom)) max(var(--gap),env(safe-area-inset-left));
+  background:var(--page);color:var(--ink);
+  font-family:"DM Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+/* Parent: stretches to the full viewport height. Children sit inside it. */
+.card{
+  flex:1;max-width:520px;
+  display:flex;flex-direction:column;align-items:center;justify-content:var(--align);
+  padding:clamp(28px,5dvh,52px) 20px 28px;
+  background:var(--card);border-radius:28px;
+}
+.logo{
+  width:clamp(76px,22vw,92px);aspect-ratio:1;flex:none;
+  border-radius:50%;overflow:hidden;background:var(--logo-bg);
+}
+.logo img{display:block;width:100%;height:100%;object-fit:cover}
+h1{font-size:clamp(16px,4.6vw,18px);font-weight:700;line-height:1.1;margin:12px 0 8px;text-align:center}
+.about{font-size:clamp(13px,3.7vw,15px);line-height:1.3;text-align:center;font-weight:400}
+.about span{display:block}
+.links{width:100%;display:grid;gap:12px;margin-top:clamp(16px,3dvh,24px)}
+.link{
+  display:grid;grid-template-columns:28px 1fr 28px;align-items:center;
+  min-height:54px;padding:0 14px;border-radius:12px;
+  background:var(--btn);color:var(--btn-ink);text-decoration:none;
+  font-size:16px;font-weight:700;text-align:center;
+  -webkit-tap-highlight-color:transparent;transition:background .15s,transform .15s;
+}
+.link span{grid-column:2;grid-row:1}
+.link:hover{background:var(--btn-hover)}
+.link:active{transform:scale(.98)}
+.link:focus-visible{outline:3px solid #fff;outline-offset:2px}
+.link svg{grid-column:1;grid-row:1;width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+@media (prefers-reduced-motion:reduce){.link{transition:none}}
+</style>
+</head>
+<body>
+<main class="card">
+  <div class="logo"><img alt="Hygge Coffee logo" width="320" height="320" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAQDAwMDAgQDAwMEBAQFBgoGBgUFBgwICQcKDgwPDg4MDQ0PERYTDxAVEQ0NExoTFRcYGRkZDxIbHRsYHRYYGRj/2wBDAQQEBAYFBgsGBgsYEA0QGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBj/wAARCAFAAUADASIAAhEBAxEB/8QAHQABAAMBAQADAQAAAAAAAAAAAAcICQYFAQIDBP/EAFMQAAEDBAEDAgEFCwQMDgMAAAEAAgMEBQYRBwgSIRMxQQkUIlFhFRYYMjhCcYGVtNIjVnahJDM2N3JzdYKRsbLBFyZSU1ViY2V0hIWU0dOTs9T/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8Az/REQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBET4oCKbcG6TubuRsEocxxXGKaos9d3mmnnuEEBkDXFhIa9wOu5pHkfBdH+At1H/zQt/7Xpf40Fb0Vjz0LdR4GziNvH/rFL/Gow5T4X5C4auluoM/s0dvkuMTpqV0VTHUMka0gO+kwkAgkbB+sII/RSDxZwryHzNcLjR4BZo7g+2xslqnS1MdOyMPJDB3PIBJLXaA+oqTvwFuo8jYxC3/til/jQVwRWQ/AW6j/AOaFv/a9L/GucznpO5u45wSuzDKsZpqe0UPYameC4QTmIOcGAlrHE67nAeB8UEJInxRAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERBI3H/O/LXGXzaHD86u9FQ00nqst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r4/o32r736yT1qmlltdNI6WQbDZHSOYX97QSGu7tt+C4w+/gaREBdnZ+UsssXHNfglvdahYrg4SVlNNa6aV1Q9u+x7pHsLy5vce07+jvxpcYiB8UREHdY3y5mOKYPXYfZXWZtluDmPrqWps9JU/Oyxxcwyukjc5/aSS3Z8fBeVlOd5DmFFa6K8SUTKS1xyR0VLQ0MNHDCHu736jhY1u3O8lxGzoefAXNIgLs8M5Sy7ALVc7djEtrghusLqau+c2umqnVMLtbic6Vjj6Z7Qe322NrjEQdXkPIuS5Li9LjlebZT2qlqX1kVHbbbT0UfrPaGOkcIWN73drQNu3oe2trlERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERB//2Q=="></div>
+  <h1>Hygge Coffee</h1>
+  <p class="about">
+    <span>/ˈho͞ogə, ˈho͝ogə/ a quality of coziness and comfortable.</span>
+    <span>Emilio Jacinto St. Poblacion District<br>Davao City</span>
+    <span>Everyday 8 AM–12 AM</span>
+  </p>
+
+  <nav class="links" aria-label="Hygge Coffee social media">
+    <!-- Google Review button (add your review link, then remove the comment markers)
+    <a class="link" href="PASTE-GOOGLE-REVIEW-LINK" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 12.2H12M20.3 12.2A8.5 8.5 0 1 1 17.8 6"/></svg>
+      <span>Google Review</span>
+    </a>
+    -->
+    <a class="link" href="https://www.facebook.com/hyggecoffeedvo/" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21.5v-8.2h2.8l.5-3.3h-3.3V7.9c0-1 .5-1.7 1.8-1.7h1.6V3.3c-.4-.1-1.4-.2-2.4-.2-2.5 0-4 1.5-4 4.2V10H7.7v3.3h2.8v8.2z"/></svg>
+      <span>Facebook</span>
+    </a>
+    <a class="link" href="https://www.instagram.com/hyggecoffeedavao" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".7"/></svg>
+      <span>Instagram</span>
+    </a>
+    <a class="link" href="https://www.tiktok.com/@hygge.coffee.dvo" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 3.5v11a3.8 3.8 0 1 1-3.8-3.8"/><path d="M14.5 3.5c.3 2.5 2 4.2 4.5 4.4"/></svg>
+      <span>TikTok</span>
+    </a>
+  </nav>
+</main>
+</body>
+</html>

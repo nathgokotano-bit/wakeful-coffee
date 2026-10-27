@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Headspace Coffee</title>
+
+<!-- Keep this page out of Google and other search engines -->
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+
+<meta name="theme-color" content="#2B3937">
+<link rel="icon" type="image/jpeg" href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCABAAEADASIAAhEBAxEB/8QAHAABAAEFAQEAAAAAAAAAAAAAAAcDBAUICQYC/8QANhAAAQQCAQICBwMNAAAAAAAAAQACAwQFEQYhQQcxCBITFTJhgVFxkhQXIjZDVnJzdbKzwtL/xAAYAQEBAQEBAAAAAAAAAAAAAAAAAgQBBf/EABsRAQEBAAMBAQAAAAAAAAAAAAABAgQRElEU/9oADAMBAAIRAxEAPwCAERFbyRERAREQEREBZLB4LLZ+xJBhMdbyE8bPaPjrRl7mt3rZA7bWNU8eiF+vGa/pw/ytSrxn1qRFWT4PynF0JruS47lalOEetJNNXc1jBvWyT5eatMhxnO43GxZDIYbI1aMmvUsTVnsYd+XUjuuhF+lWyFY17sLJoC5ryx42CWuDhsfeAVa8lowZLj2SpW42y1568kb2OGwQWlc7abxp9aGcf4PyfkNM28Jgr9yrst9tHH+gSPMAnQP0WU/NRzv91sl+Fv8A0tw/CnKYnK8Bwj8G+L8mhqRROib0dC5rQHNcOx2D9/n3XrtD5LnZnj5s77c7eR8cy/GrcVXPY+ehYlZ7VkcwALm7I30J7grEqdPS7LXc7wxaQR7sHl/NeoLVRm3nzqyCnH0R7UMPiBk4JZGslnxxETSfjLZGkgfPXX6FQcq9K3Yo24rVKeWvZicHxyxPLXsd9oI6hKY151K6N2bcFYwieVkZmkEUYcfjedkAfPQJ+io5cj3Tc6/sH/2laE2ue8rt5GlftcgyM1ukS6vI+XfsiQWktHlsgkb1tX8nipzmSNzH8nyJY4EEes3qPwqemr9Ofjd/jAaOO4sgAE1Id6/gCyh0Ro60tC4PFLm8EMcUPJsiyONoY1oc3QAGgPhX07xW505pB5TktH7HNH+qdE5Ofj0npN4rE4rxKLMO2OJ09Rk9qGPo1kpc7t2JaGkj577qJVWuWp7tqWzcnlnsSuL5JZXlznuPck9SVRVMm76toiIiRERAREQEREH/2Q==">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --page:#2B3937;        /* outer background (sampled from your Framer design) */
+  --card:#3A4947;        /* parent card */
+  --btn:#536462;         /* link buttons */
+  --btn-hover:#5E706D;
+  --logo-bg:#062E26;     /* circle behind the logo */
+  --ink:#000;            /* text + icons as designed. For better contrast on phones try #fff */
+  --gap:16px;            /* space between card and screen edge */
+  --align:flex-start;    /* flex-start = content at top (as designed) · center = vertically centered */
+}
+*{box-sizing:border-box;margin:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  min-height:100vh;min-height:100dvh;           /* follows the real visible viewport on any phone */
+  display:flex;justify-content:center;
+  padding:max(var(--gap),env(safe-area-inset-top)) max(var(--gap),env(safe-area-inset-right)) max(var(--gap),env(safe-area-inset-bottom)) max(var(--gap),env(safe-area-inset-left));
+  background:var(--page);color:var(--ink);
+  font-family:"DM Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+/* Parent: stretches to the full viewport height. Children sit inside it. */
+.card{
+  flex:1;max-width:520px;
+  display:flex;flex-direction:column;align-items:center;justify-content:var(--align);
+  padding:clamp(28px,5dvh,52px) 20px 28px;
+  background:var(--card);border-radius:28px;
+}
+.logo{
+  width:clamp(76px,22vw,92px);aspect-ratio:1;flex:none;
+  border-radius:50%;overflow:hidden;background:var(--logo-bg);
+}
+.logo img{display:block;width:100%;height:100%;object-fit:cover}
+h1{font-size:clamp(16px,4.6vw,18px);font-weight:700;line-height:1.1;margin:14px 0 8px;text-align:center}
+.about{font-size:clamp(14px,4vw,16px);line-height:1.25;text-align:center;font-weight:400}
+.about span{display:block;text-wrap:balance}
+.links{width:100%;display:grid;gap:12px;margin-top:clamp(16px,3dvh,24px)}
+.link{
+  display:grid;grid-template-columns:28px 1fr 28px;align-items:center;
+  min-height:54px;padding:0 14px;border-radius:14px;
+  background:var(--btn);color:var(--ink);text-decoration:none;
+  font-size:16px;font-weight:700;text-align:center;
+  -webkit-tap-highlight-color:transparent;transition:background .15s,transform .15s;
+}
+.link span{grid-column:2;grid-row:1}
+.link:hover{background:var(--btn-hover)}
+.link:active{transform:scale(.98)}
+.link:focus-visible{outline:3px solid #fff;outline-offset:2px}
+.link svg{grid-column:1;grid-row:1;width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.link svg.solid{fill:currentColor;stroke:none}
+@media (prefers-reduced-motion:reduce){.link{transition:none}}
+</style>
+</head>
+<body>
+<main class="card">
+  <div class="logo"><img alt="Headspace Coffee logo" width="320" height="320" src="data:image/jpeg;base64,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"></div>
+  <h1>headspace coffee</h1>
+  <p class="about">
+    <span>Serving Comfort Drinks &amp; Specialty Coffee for your daily headspace</span>
+    <span>Mon–Sat 8am – 12am | Sun 1pm – 12am</span>
+  </p>
+
+  <nav class="links" aria-label="Headspace Coffee social media">
+    <!-- Google Review button (add your review link, then remove the comment markers)
+    <a class="link" href="PASTE-GOOGLE-REVIEW-LINK" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 12.2H12M20.3 12.2A8.5 8.5 0 1 1 17.8 6"/></svg>
+      <span>Google Review</span>
+    </a>
+    -->
+    <a class="link" href="https://www.facebook.com/headspacecoffee.co" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21.5v-8.2h2.8l.5-3.3h-3.3V7.9c0-1 .5-1.7 1.8-1.7h1.6V3.3c-.4-.1-1.4-.2-2.4-.2-2.5 0-4 1.5-4 4.2V10H7.7v3.3h2.8v8.2z"/></svg>
+      <span>Facebook</span>
+    </a>
+    <a class="link" href="https://www.instagram.com/headspacecoffee.co" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".7"/></svg>
+      <span>Instagram</span>
+    </a>
+    <a class="link" href="https://www.tiktok.com/@headspacecoffee.co" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 3.5v11a3.8 3.8 0 1 1-3.8-3.8"/><path d="M14.5 3.5c.3 2.5 2 4.2 4.5 4.4"/></svg>
+      <span>TikTok</span>
+    </a>
+    <a class="link" href="https://www.threads.net/@headspacecoffee.co" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.8 10.6c-.4-2.9-2-4.5-4.7-4.5-3 0-4.7 2.2-4.7 5.9s1.7 5.9 4.7 5.9c2.4 0 4-1.2 4-3.1 0-1.9-1.7-2.7-3.7-2.7-1.4 0-2.3.6-2.3 1.6 0 .9.8 1.5 1.8 1.5 1.6 0 2.5-1.2 2.5-3.6"/></svg>
+      <span>Threads</span>
+    </a>
+  </nav>
+</main>
+</body>
+</html>
